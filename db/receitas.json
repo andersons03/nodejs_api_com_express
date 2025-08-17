@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Caldeirada de escorpião gigante com cogumelo ambulante",
+    "episodio": 1
+  },
+  {
+    "id": 2,
+    "name": "Torta de planta devoradora de gente",
+    "episodio": 1
+  },
+  {
+    "id": 3,
+    "name": "Basilisco Assado",
+    "episodio": 2
+  },
+  {
+    "id": 4,
+    "name": "Omelete de Mandrágora e Basilisco",
+    "episodio": 2
+  },
+  {
+    "id": 5,
+    "name": "Kakiage de Mandrágora e Tempurá de Morcego Gigante",
+    "episodio": 2
+  }
+]
