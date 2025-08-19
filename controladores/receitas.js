@@ -1,6 +1,9 @@
+const {getTodasAsReceitas} = require("../servicos/receitas")
+
 function getReceitas(req,res){
   try {
-    res.send("Lista de get");
+    const receitas = getTodasAsReceitas();
+    res.send(receitas);
   } catch (error) {
     res.status(500);
     res.send(error.message);
