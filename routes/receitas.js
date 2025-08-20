@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const {getReceitas, getReceita, postReceita, patchReceitas} = require("../controladores/receitas");
+const {getReceitas, getReceita, postReceita, patchReceitas, deleteReceita} = require("../controladores/receitas");
 
 const router = Router();
 
@@ -15,8 +15,6 @@ router.post('/cadastrar', postReceita)
 
 router.patch('/atualizar/:id', patchReceitas)
 
-// router.delete('/deletar', (req,res) => {
-//   res.send("Lista de delete");
-// })
+router.delete('/deletar/:id', deleteReceita)
 
 module.exports = router

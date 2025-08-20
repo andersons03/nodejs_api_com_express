@@ -38,9 +38,19 @@ function atualizaReceita(id, receitaAtualizada){
   fs.writeFileSync('db/receitas.json', JSON.stringify(receitas));
 }
 
+function deletaReceitaPorId(id){
+  const receitas = getTodasAsReceitas();
+
+  const receitasFiltradas = receitas.filter(receita => receita.id !== id)
+
+  console.log(receitasFiltradas);
+  fs.writeFileSync('db/receitas.json', JSON.stringify(receitasFiltradas));
+}
+
 module.exports = {
   getTodasAsReceitas,
   getReceitaPorId,
   adicionaReceita,
-  atualizaReceita
+  atualizaReceita,
+  deletaReceitaPorId
 }
