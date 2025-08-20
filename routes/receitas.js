@@ -1,19 +1,21 @@
 const {Router} = require("express");
-const {getReceitas} = require("../controladores/receitas");
+const {getReceitas, getReceita} = require("../controladores/receitas");
 
 const router = Router();
 
 router.get('/', getReceitas)
 
+router.get('/:id', getReceita)
+
 router.post('/cadastrar', (req,res) => {
   res.send("Lista de post");
 })
 
-router.put('/atualizar', (req,res) => {
-  res.send("Lista de put");
-})
+// router.put('/atualizar', (req,res) => {
+//   res.send("Lista de put");
+// })
 
-router.patch('/', (req,res) => {
+router.patch('/atualizar', (req,res) => {
   res.send("Lista de patch");
 })
 
