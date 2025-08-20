@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const {getReceitas, getReceita, postReceita} = require("../controladores/receitas");
+const {getReceitas, getReceita, postReceita, patchReceitas} = require("../controladores/receitas");
 
 const router = Router();
 
@@ -13,9 +13,7 @@ router.post('/cadastrar', postReceita)
 //   res.send("Lista de put");
 // })
 
-// router.patch('/atualizar', (req,res) => {
-//   res.send("Lista de patch");
-// })
+router.patch('/atualizar/:id', patchReceitas)
 
 // router.delete('/deletar', (req,res) => {
 //   res.send("Lista de delete");

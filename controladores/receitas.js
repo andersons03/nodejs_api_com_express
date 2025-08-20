@@ -1,4 +1,4 @@
-const {getTodasAsReceitas, getReceitaPorId, adicionaReceita} = require("../servicos/receitas")
+const {getTodasAsReceitas, getReceitaPorId, adicionaReceita, atualizaReceita} = require("../servicos/receitas")
 
 function getReceitas(req,res){
   try {
@@ -40,8 +40,21 @@ function postReceita(req,res){
   }
 }
 
+function patchReceitas(req,res){
+  try {
+    const receitaId = req.params.id;
+    const receitaBody = req.body;
+
+    atualizaReceita(receitaId, receitaBody);
+    res.status(200).send("Receita atualziada com sucesso!")
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getReceitas,
   getReceita,
-  postReceita
+  postReceita,
+  patchReceitas
 }

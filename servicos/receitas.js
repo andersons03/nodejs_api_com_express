@@ -28,8 +28,19 @@ function adicionaReceita(receitaNova){
   return true;
 }
 
+function atualizaReceita(id, receitaAtualizada){
+  // console.log(id, receita);
+  let receitas = getTodasAsReceitas();
+  const receitaIndex = receitas.findIndex(receita => receita.id == id);
+  const receitaModificada = {...receitas[receitaIndex], ...receitaAtualizada}
+  receitas[receitaIndex] = receitaModificada;
+
+  fs.writeFileSync('db/receitas.json', JSON.stringify(receitas));
+}
+
 module.exports = {
   getTodasAsReceitas,
   getReceitaPorId,
-  adicionaReceita
+  adicionaReceita,
+  atualizaReceita
 }
